@@ -13,12 +13,9 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    binding.pry
     if @article.save
-      binding.pry
       redirect_to @article
     else
-      binding.pry
       render :new, status: :unprocessable_entity
     end
   end
